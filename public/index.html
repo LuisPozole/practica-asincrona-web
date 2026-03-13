@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación Asíncrona de Información</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <h1>Consulta Asíncrona de Productos</h1>
+    <p>Haz clic en el botón para cargar la información desde el servidor sin recargar la página.</p>
+
+    <button id="btnCargar">Cargar productos</button>
+
+    <!-- Mejora 1: Buscador de productos -->
+    <div class="controles" id="controles" style="display: none;">
+      <input type="text" id="buscador" placeholder="🔎 Buscar producto por nombre..." />
+
+      <!-- Mejora 2: Filtro por categoría -->
+      <select id="filtroCategoria">
+        <option value="todas">🗂 Todas las categorías</option>
+      </select>
+    </div>
+
+    <div id="mensaje" class="mensaje"></div>
+
+    <!-- Mejora 3: Animación de carga -->
+    <div id="spinner" class="spinner" style="display: none;">
+      <div class="spinner-circle"></div>
+      <p>Cargando productos...</p>
+    </div>
+
+    <section id="listaProductos" class="grid-productos"></section>
+
+    <!-- Mejora 4: Formulario para agregar productos -->
+    <div id="formularioContainer" class="formulario-container" style="display: none;">
+      <h2>➕ Agregar Nuevo Producto</h2>
+      <form id="formProducto" class="form-producto">
+        <input type="text" id="nombreProducto" placeholder="Nombre del producto" required />
+        <input type="number" id="precioProducto" placeholder="Precio" min="0" step="0.01" required />
+        <input type="text" id="categoriaProducto" placeholder="Categoría" required />
+        <button type="submit" class="btn-agregar">Agregar Producto</button>
+      </form>
+      <div id="mensajeForm" class="mensaje"></div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
